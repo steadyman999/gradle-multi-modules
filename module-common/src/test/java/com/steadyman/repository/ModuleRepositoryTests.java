@@ -19,7 +19,7 @@ public class ModuleRepositoryTests {
     @Test
     public void add() {
         memberRepository.save(new Member("steadyman", "steadyman@gmail.com"));
-        Member saved = memberRepository.findOne(1L);
+        Member saved = memberRepository.findById(1L).orElse(null);
         assertThat(saved.getName(), is("steadyman"));
     }
 }
